@@ -1,0 +1,48 @@
+# Render Blueprint for ApexCare Clinic Appointment Booking Platform
+# Documentation: https://render.com/docs/blueprint-spec
+
+version: "1"
+
+services:
+  # ========================================================
+  # 1. Express Backend Web Service (Node.js API)
+  # ========================================================
+  - type: web
+    name: apexcare-clinic-api
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false # Enter your MongoDB Atlas connection string in Render Dashboard
+      - key: CLIENT_URL
+        sync: false # Enter your Vercel or Render frontend URL (e.g. https://apexcare-clinic.vercel.app)
+
+  # ========================================================
+  # 2. React + Vite Frontend Static Site
+  # ========================================================
+  - type: web
+    name: apexcare-clinic-ui
+    runtime: static
+    plan: free
+    region: oregon
+    rootDir: client
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      # Single-Page Application (SPA) catch-all rewrite
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        sync: false # Set to backend URL: https://apexcare-clinic-api.onrender.com/api
+

@@ -1,0 +1,27 @@
+{
+  "name": "apexcare-clinic",
+  "version": "1.0.0",
+  "description": "ApexCare Clinic Appointment Booking Website - Functional Demo MVP",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "seed": "npm run seed --prefix server",
+    "build:client": "npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "test:api": "node server/testApi.js"
+  },
+  "keywords": [
+    "clinic",
+    "appointment-booking",
+    "react",
+    "express",
+    "mongodb",
+    "vite",
+    "healthcare"
+  ],
+  "author": "ApexCare Engineering",
+  "license": "ISC"
+}
+
