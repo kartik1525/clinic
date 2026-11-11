@@ -35,12 +35,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
-// API Routes
+// API Routes (Mounted with /api prefix and root fallback for maximum client compatibility)
 app.use('/api/doctors', doctorRoutes);
-app.use('/api/appointments', appointmentRoutes);
+app.use('/doctors', doctorRoutes);
 
-// Health check endpoint
-app.get('/api/health', (req, res) => {
+app.use('/api/appointments', appointmentRoutes);
+app.use('/appointments', appointmentRoutes);
+
+// Health check endpoint (both /api/health and /health)
+app.get(['/api/health', '/health'], (req, res) => {
   const dbStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
   res.status(200).json({
     status: 'healthy',

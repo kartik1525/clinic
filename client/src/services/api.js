@@ -1,12 +1,22 @@
 import axios from 'axios';
 
+// Normalize base URL to ensure it always includes /api and strips any trailing slashes
+const getBaseURL = () => {
+  let url = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').trim();
+  url = url.replace(/\/+$/, '');
+  if (!url.endsWith('/api')) {
+    url = `${url}/api`;
+  }
+  return url;
+};
+
 // Create Axios instance with base URL
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: getBaseURL(),
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 10000,
+  timeout: 15000,
 });
 
 // Doctor API methods
