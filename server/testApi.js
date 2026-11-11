@@ -22,13 +22,13 @@ async function runTests() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        patientName: 'Jonathan Test',
-        phone: '+1 555-987-6543',
-        email: 'jonathan.test@example.com',
+        patientName: 'Kavita Pandey',
+        phone: '+91 98765 43210',
+        email: 'kavita.pandey@example.com',
         doctorId: docId,
         appointmentDate: '2026-11-25',
         appointmentTime: '11:00 AM',
-        reason: 'General Wellness Check',
+        reason: 'Preventive health checkup and seasonal viral consultation',
       }),
     });
     const created = await createRes.json();
@@ -40,9 +40,9 @@ async function runTests() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        patientName: 'Another Patient',
-        phone: '+1 555-111-2222',
-        email: 'another@example.com',
+        patientName: 'Aman Saxena',
+        phone: '+91 91234 56780',
+        email: 'aman.saxena@example.com',
         doctorId: docId,
         appointmentDate: '2026-11-25',
         appointmentTime: '11:00 AM',
@@ -66,9 +66,9 @@ async function runTests() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        patientName: 'Third Patient Rebooking Slot',
-        phone: '+1 555-333-4444',
-        email: 'rebook@example.com',
+        patientName: 'Shreya Joshi',
+        phone: '+91 94500 12345',
+        email: 'shreya.joshi@example.com',
         doctorId: docId,
         appointmentDate: '2026-11-25',
         appointmentTime: '11:00 AM',

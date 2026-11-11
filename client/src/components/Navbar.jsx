@@ -26,15 +26,15 @@ export const Navbar = () => {
           <div className="flex items-center gap-6 flex-wrap justify-center sm:justify-start">
             <span className="inline-flex items-center gap-1.5 text-teal-400 font-medium">
               <Phone className="w-3.5 h-3.5" />
-              <span>Helpline: (555) 234-CARE (2273)</span>
+              <span>Helpline: +91 98765 43210</span>
             </span>
             <span className="inline-flex items-center gap-1.5 text-slate-400 hidden md:inline-flex">
               <Clock className="w-3.5 h-3.5 text-teal-400" />
-              <span>Mon – Sat: 8:00 AM – 8:00 PM | Sun: 9:00 AM – 2:00 PM</span>
+              <span>Mon – Sat: 8:00 AM – 8:00 PM | Sun: 9:00 AM – 2:00 PM (IST)</span>
             </span>
             <span className="inline-flex items-center gap-1.5 text-slate-400 hidden lg:inline-flex">
               <MapPin className="w-3.5 h-3.5 text-teal-400" />
-              <span>742 Evergreen Medical Blvd, Suite 300</span>
+              <span>Gomti Nagar, Lucknow, Uttar Pradesh</span>
             </span>
           </div>
 
@@ -68,11 +68,11 @@ export const Navbar = () => {
                   Apex<span className="text-teal-600">Care</span>
                 </span>
                 <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-teal-50 text-teal-700 border border-teal-200">
-                  Clinic
+                  Multispeciality Clinic
                 </span>
               </div>
               <p className="text-xs text-slate-500 font-medium tracking-wide">
-                Family & Specialty Medicine
+                Trusted Healthcare for Every Family • Lucknow
               </p>
             </div>
           </Link>

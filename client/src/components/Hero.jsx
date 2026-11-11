@@ -25,7 +25,7 @@ export const Hero = () => {
             {/* Pill Tag */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-semibold shadow-xs">
               <ShieldCheck className="w-4 h-4 text-teal-600" />
-              <span>Accredited Multi-Specialty Family Clinic</span>
+              <span>NABH Accredited Multispeciality Clinic • Gomti Nagar, Lucknow</span>
             </div>
 
             {/* Main Headline */}
@@ -71,7 +71,7 @@ export const Hero = () => {
               </div>
               <div className="flex items-center gap-2 justify-center lg:justify-start">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
-                <span className="font-medium">Board-Certified MDs</span>
+                <span className="font-medium">Board-Certified MD & DM Specialists</span>
               </div>
               <div className="flex items-center gap-2 justify-center lg:justify-start col-span-2 sm:col-span-1">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
@@ -95,7 +95,7 @@ export const Hero = () => {
                 {/* Bottom Overlay inside image */}
                 <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-slate-100 flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold text-slate-900">Dr. Sarah Jenkins & Team</p>
+                    <p className="text-xs font-bold text-slate-900">Dr. Arjun Gupta & Faculty</p>
                     <p className="text-[11px] text-teal-700 font-medium">Head of Internal Medicine</p>
                   </div>
                   <div className="flex items-center gap-1 bg-teal-50 px-2 py-1 rounded-lg border border-teal-200">

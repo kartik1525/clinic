@@ -47,7 +47,7 @@ app.get(['/api/health', '/health'], (req, res) => {
   const dbStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
   res.status(200).json({
     status: 'healthy',
-    message: 'ApexCare Clinic API service is operational',
+    message: 'ApexCare Multispeciality Clinic (Lucknow) API service is operational',
     database: dbStatus,
     timestamp: new Date().toISOString(),
   });
@@ -66,7 +66,7 @@ if (fs.existsSync(clientDistPath)) {
   // Root API info when running backend in standalone mode
   app.get('/', (req, res) => {
     res.json({
-      name: 'ApexCare Clinic Appointment System API',
+      name: 'ApexCare Multispeciality Clinic (Lucknow) Appointment API',
       version: '1.0.0',
       documentation: {
         health: 'GET /api/health',

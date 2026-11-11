@@ -15,6 +15,7 @@ import {
   RotateCcw,
 } from 'lucide-react';
 import { StatusBadge } from './StatusBadge';
+import { formatINR, formatIndianDate, formatIndianLongDate } from '../services/formatters';
 
 export const BookingConfirmation = ({ appointment, onBookAnother }) => {
   if (!appointment) return null;
@@ -65,12 +66,13 @@ export const BookingConfirmation = ({ appointment, onBookAnother }) => {
           <div className="text-left sm:text-right text-xs text-slate-500">
             <span>Booked on: </span>
             <span className="font-semibold text-slate-700">
-              {new Date(appointment.createdAt || Date.now()).toLocaleDateString('en-US', {
+              {new Date(appointment.createdAt || Date.now()).toLocaleDateString('en-IN', {
+                day: '2-digit',
                 month: 'short',
-                day: 'numeric',
                 year: 'numeric',
                 hour: '2-digit',
                 minute: '2-digit',
+                timeZone: 'Asia/Kolkata',
               })}
             </span>
           </div>
@@ -102,7 +104,7 @@ export const BookingConfirmation = ({ appointment, onBookAnother }) => {
 
             <div className="pt-2 text-xs flex justify-between text-slate-600 border-t border-slate-200/60">
               <span>Consultation Fee:</span>
-              <span className="font-bold text-slate-900">${doctor.consultationFee || 75}</span>
+              <span className="font-bold text-slate-900">{formatINR(doctor.consultationFee || 500)}</span>
             </div>
           </div>
 
@@ -117,21 +119,16 @@ export const BookingConfirmation = ({ appointment, onBookAnother }) => {
               <div className="flex items-center gap-2.5 text-slate-800">
                 <Calendar className="w-4 h-4 text-teal-600" />
                 <span className="font-bold">
-                  {new Date(appointment.appointmentDate).toLocaleDateString('en-US', {
-                    weekday: 'long',
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}
+                  {formatIndianLongDate(appointment.appointmentDate)}
                 </span>
               </div>
               <div className="flex items-center gap-2.5 text-slate-800">
                 <Clock className="w-4 h-4 text-teal-600" />
-                <span className="font-bold text-teal-800">{appointment.appointmentTime}</span>
+                <span className="font-bold text-teal-800">{appointment.appointmentTime} (IST)</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs text-slate-600 pt-1">
                 <MapPin className="w-4 h-4 text-slate-400 shrink-0" />
-                <span>Suite 300, 742 Evergreen Medical Blvd</span>
+                <span>Plot 14, Vibhuti Khand, Gomti Nagar, Lucknow</span>
               </div>
             </div>
           </div>
@@ -171,11 +168,11 @@ export const BookingConfirmation = ({ appointment, onBookAnother }) => {
 
         {/* Instructions Alert */}
         <div className="p-4 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 text-xs space-y-1">
-          <p className="font-bold">Next Steps for Your Visit:</p>
+          <p className="font-bold">Next Steps for Your Clinic Visit:</p>
           <ul className="list-disc list-inside space-y-0.5 text-blue-800">
-            <li>Please arrive 10 minutes prior to your scheduled time for vital signs check.</li>
-            <li>Bring a valid government-issued photo ID and any relevant medical records.</li>
-            <li>Complimentary validated parking is available in Garage B.</li>
+            <li>Please arrive 10 minutes prior to your scheduled time slot for token and vitals check.</li>
+            <li>Carry any previous doctor prescriptions, pathology reports, and a valid photo ID.</li>
+            <li>Complimentary patient parking is available inside the clinic premises in Vibhuti Khand.</li>
           </ul>
         </div>
 

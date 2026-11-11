@@ -6,6 +6,7 @@ import {
   bookAppointment,
 } from '../services/api';
 import { BookingConfirmation } from '../components/BookingConfirmation';
+import { formatINR, formatIndianDate } from '../services/formatters';
 import {
   Calendar,
   Clock,
@@ -152,11 +153,11 @@ export const BookingPage = () => {
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Contact phone number is required';
+      newErrors.phone = 'Contact mobile number is required';
     } else {
-      const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]{6,15}$/;
+      const phoneRegex = /^(\+?91[\-\s]?)?[6789]\d{9}$|^[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]{6,15}$/;
       if (!phoneRegex.test(formData.phone.trim())) {
-        newErrors.phone = 'Please enter a valid phone number (e.g. +1 555-019-2834)';
+        newErrors.phone = 'Please enter a valid Indian mobile number (e.g. +91 98765 43210 or 9876543210)';
       }
     }
 
@@ -246,22 +247,34 @@ export const BookingPage = () => {
   const handleAutoFillDemo = () => {
     const demoPatients = [
       {
-        name: 'Olivia Sterling',
-        phone: '+1 (555) 432-8765',
-        email: 'olivia.sterling@example.com',
-        reason: 'Periodic wellness review and preventative health screening',
+        name: 'Rahul Sharma',
+        phone: '+91 98765 43210',
+        email: 'rahul.sharma@example.com',
+        reason: 'Annual preventive physical and routine fasting blood sugar review',
       },
       {
-        name: 'Julian Vance',
-        phone: '+1 (555) 789-1234',
-        email: 'julian.v@example.com',
-        reason: 'Mild lower back stiffness and mobility check',
+        name: 'Priya Verma',
+        phone: '+91 91234 56780',
+        email: 'priya.verma@example.com',
+        reason: 'Cardiology follow-up and blood pressure monitoring',
       },
       {
-        name: 'Maya Chen',
-        phone: '+1 (555) 654-9870',
-        email: 'maya.chen@example.com',
-        reason: 'Childhood seasonal allergy review and booster checkup',
+        name: 'Arjun Gupta',
+        phone: '+91 94500 12345',
+        email: 'arjun.gupta@example.com',
+        reason: 'Persistent skin allergy, dust rash, and prescription review',
+      },
+      {
+        name: 'Sneha Mishra',
+        phone: '+91 93350 98765',
+        email: 'sneha.mishra@example.com',
+        reason: 'Knee joint stiffness and discomfort after morning walks',
+      },
+      {
+        name: 'Ananya Singh',
+        phone: '+91 87654 32109',
+        email: 'ananya.singh@example.com',
+        reason: 'Childhood vaccination booster and pediatric growth assessment',
       },
     ];
     const chosen = demoPatients[Math.floor(Math.random() * demoPatients.length)];
@@ -383,14 +396,14 @@ export const BookingPage = () => {
                     {/* Phone Number */}
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                        Phone Number <span className="text-rose-500">*</span>
+                        Mobile Number <span className="text-rose-500">*</span>
                       </label>
                       <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="e.g. +1 (555) 234-5678"
+                        placeholder="e.g. +91 98765 43210"
                         className={`w-full px-4 py-3 rounded-xl border text-sm transition-all ${
                           errors.phone
                             ? 'border-rose-400 bg-rose-50/40 focus:ring-rose-500'
@@ -415,7 +428,7 @@ export const BookingPage = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="e.g. liam@example.com"
+                        placeholder="e.g. rahul@example.com"
                         className={`w-full px-4 py-3 rounded-xl border text-sm transition-all ${
                           errors.email
                             ? 'border-rose-400 bg-rose-50/40 focus:ring-rose-500'
@@ -457,7 +470,7 @@ export const BookingPage = () => {
                       >
                         {doctors.map((doc) => (
                           <option key={doc._id} value={doc._id}>
-                            {doc.name} — {doc.specialization} (${doc.consultationFee})
+                            {doc.name} — {doc.specialization} ({formatINR(doc.consultationFee)})
                           </option>
                         ))}
                       </select>
@@ -476,7 +489,7 @@ export const BookingPage = () => {
                                 {selectedDoctor.name}
                               </h4>
                               <span className="text-xs font-bold text-teal-700">
-                                ${selectedDoctor.consultationFee} fee
+                                {formatINR(selectedDoctor.consultationFee)} fee
                               </span>
                             </div>
                             <p className="text-xs text-teal-700 font-medium">
@@ -690,18 +703,14 @@ export const BookingPage = () => {
                       <span className="text-slate-500">Date:</span>
                       <span className="font-bold text-slate-900">
                         {formData.appointmentDate
-                          ? new Date(formData.appointmentDate).toLocaleDateString('en-US', {
-                              month: 'short',
-                              day: 'numeric',
-                              year: 'numeric',
-                            })
+                          ? formatIndianDate(formData.appointmentDate)
                           : 'Not set'}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-slate-500">Time Slot:</span>
                       <span className={`font-bold ${formData.appointmentTime ? 'text-teal-700' : 'text-slate-400'}`}>
-                        {formData.appointmentTime || 'Select time slot'}
+                        {formData.appointmentTime ? `${formData.appointmentTime} (IST)` : 'Select time slot'}
                       </span>
                     </div>
                   </div>
@@ -721,7 +730,7 @@ export const BookingPage = () => {
                 <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
                   <span className="text-xs text-slate-600">Consultation Fee:</span>
                   <span className="text-base font-extrabold text-teal-700">
-                    ${selectedDoctor?.consultationFee || 75}
+                    {formatINR(selectedDoctor?.consultationFee || 500)}
                   </span>
                 </div>
 

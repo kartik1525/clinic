@@ -66,7 +66,7 @@ export const ContactTimingsSection = () => {
               <div className="text-xs space-y-1">
                 <p className="font-bold">Medical Emergency Notice:</p>
                 <p className="text-amber-800 leading-relaxed">
-                  For life-threatening emergencies, severe chest pain, or acute respiratory distress, please call <strong>911</strong> or visit the nearest hospital emergency department immediately.
+                  For life-threatening emergencies, severe chest pain, or acute trauma, please dial <strong>108 or 112</strong> (National Emergency Ambulance) or visit the nearest hospital emergency department immediately.
                 </p>
               </div>
             </div>
@@ -82,7 +82,7 @@ export const ContactTimingsSection = () => {
                 Convenient, Accessible Facilities
               </h2>
               <p className="text-slate-600 text-sm mt-2 leading-relaxed">
-                Centrally located in Metro City Medical District with dedicated
+                Centrally located in Vibhuti Khand, Gomti Nagar, Lucknow with dedicated
                 patient parking and full wheelchair accessibility.
               </p>
             </div>
@@ -97,9 +97,9 @@ export const ContactTimingsSection = () => {
                   Physical Address
                 </h4>
                 <p className="text-sm font-semibold text-slate-900 leading-snug">
-                  742 Evergreen Medical Blvd, Suite 300, Metro City, MC 94016
+                  Plot 14, Vibhuti Khand, Gomti Nagar, Lucknow, UP 226010
                 </p>
-                <p className="text-xs text-slate-500">Building 4, 3rd Floor East Wing</p>
+                <p className="text-xs text-slate-500">Near Gomti Nagar Railway Station</p>
               </div>
 
               <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
@@ -110,9 +110,9 @@ export const ContactTimingsSection = () => {
                   Telephone Contact
                 </h4>
                 <p className="text-sm font-semibold text-slate-900">
-                  (555) 234-CARE (2273)
+                  +91 98765 43210
                 </p>
-                <p className="text-xs text-slate-500">Direct booking & prescription line</p>
+                <p className="text-xs text-slate-500">Alt: +91 91234 56780</p>
               </div>
 
               <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
@@ -123,7 +123,7 @@ export const ContactTimingsSection = () => {
                   Email Support
                 </h4>
                 <p className="text-sm font-semibold text-slate-900">
-                  care@apexcareclinic.com
+                  contact@apexcare.example.com
                 </p>
                 <p className="text-xs text-slate-500">Inquiries answered within 2 hours</p>
               </div>
@@ -136,9 +136,9 @@ export const ContactTimingsSection = () => {
                   Parking & Transit
                 </h4>
                 <p className="text-sm font-semibold text-slate-900">
-                  Free 2-Hour Validated Parking
+                  Dedicated Patient Parking
                 </p>
-                <p className="text-xs text-slate-500">Metro Station directly opposite (Exit 2)</p>
+                <p className="text-xs text-slate-500">Opposite Gomti Nagar Railway Station / Vibhuti Khand</p>
               </div>
             </div>
 
@@ -149,7 +149,7 @@ export const ContactTimingsSection = () => {
                 <div>
                   <p className="text-sm font-bold">Visiting us for the first time?</p>
                   <p className="text-xs text-slate-400">
-                    Get turn-by-turn driving directions or public transit arrival guides.
+                    Get turn-by-turn driving directions or public transit arrival guides in Lucknow.
                   </p>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export const ContactTimingsSection = () => {
                 href="#timings"
                 onClick={(e) => {
                   e.preventDefault();
-                  alert('Demo Navigation: ApexCare Clinic is located at 742 Evergreen Medical Blvd, Suite 300, Metro City.');
+                  alert('Clinic Location: ApexCare Multispeciality Clinic, Plot 14, Vibhuti Khand, Gomti Nagar, Lucknow, Uttar Pradesh 226010.');
                 }}
                 className="shrink-0 px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold text-xs transition-colors"
               >

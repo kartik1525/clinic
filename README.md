@@ -1,6 +1,6 @@
-# ApexCare Clinic Appointment Booking Website – Functional Demo MVP
+# ApexCare Multispeciality Clinic (Lucknow, India) – Functional Demo MVP
 
-A modern, responsive, and functional clinic appointment booking platform designed for demonstration to potential healthcare and clinical clients.
+A modern, responsive, and functional Indian clinic appointment booking platform designed for demonstration to healthcare and clinical clients. Centered around ApexCare Multispeciality Clinic located in Gomti Nagar, Lucknow, Uttar Pradesh.
 
 Built with **React (Vite) + Tailwind CSS** on the frontend, and **Node.js + Express + MongoDB (Mongoose)** on the backend.
 

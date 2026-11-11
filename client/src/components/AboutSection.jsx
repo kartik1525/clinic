@@ -50,7 +50,7 @@ export const AboutSection = () => {
           <div className="lg:col-span-7 space-y-6 order-1 lg:order-2">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-3 py-1 rounded-full border border-teal-200">
-                About ApexCare Clinic
+                About ApexCare Multispeciality Clinic • Lucknow
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">
                 Dedicated to Raising the Standard of Outpatient Healthcare
@@ -108,15 +108,15 @@ export const AboutSection = () => {
             <div className="pt-4 border-t border-slate-100 flex items-center gap-6 flex-wrap text-xs text-slate-500 font-medium">
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4 text-teal-600" />
-                State Licensed Outpatient Clinic
+                NABH Accredited Clinical Facility
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4 text-teal-600" />
-                CLIA Certified Laboratory
+                NABL Certified Diagnostic Laboratory
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4 text-teal-600" />
-                HIPAA Compliant Patient Systems
+                ABDM Compliant Digital Health Systems
               </span>
             </div>
           </div>

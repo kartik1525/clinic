@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchDoctors } from '../services/api';
+import { formatINR } from '../services/formatters';
 import {
   Star,
   Calendar,
@@ -194,7 +195,7 @@ export const DoctorsSection = () => {
                       <div className="text-right">
                         <span className="text-slate-500 text-[11px]">Consultation: </span>
                         <span className="font-bold text-teal-700 text-sm">
-                          ${doc.consultationFee}
+                          {formatINR(doc.consultationFee)}
                         </span>
                       </div>
                     </div>

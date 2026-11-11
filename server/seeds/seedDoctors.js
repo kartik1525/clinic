@@ -7,13 +7,13 @@ dotenv.config();
 
 const doctorsData = [
   {
-    name: 'Dr. Sarah Jenkins',
-    specialization: 'Internal Medicine & Primary Care',
+    name: 'Dr. Arjun Gupta',
+    specialization: 'General Physician & Internal Medicine',
     department: 'General Medicine',
-    qualification: 'MD, FACP (Johns Hopkins University School of Medicine)',
+    qualification: 'MBBS, MD (General Medicine - KGMU Lucknow)',
     experience: '14+ years',
-    bio: 'Dr. Jenkins provides comprehensive adult healthcare, preventative wellness screenings, and evidence-based chronic disease management with a gentle, patient-first approach.',
-    availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    bio: 'Experienced in adult healthcare, diabetes and hypertension management, seasonal viral infections, and preventive wellness screenings with an empathetic, patient-first approach.',
+    availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     timeSlots: [
       '09:00 AM',
       '09:30 AM',
@@ -28,19 +28,19 @@ const doctorsData = [
       '04:00 PM',
       '04:30 PM',
     ],
-    consultationFee: 75,
+    consultationFee: 500,
     rating: 4.9,
-    reviewCount: 142,
-    imageUrl: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80',
+    reviewCount: 148,
+    imageUrl: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80',
     isActive: true,
   },
   {
-    name: 'Dr. Marcus Vance',
-    specialization: 'Cardiologist & Vascular Health',
+    name: 'Dr. Ananya Sharma',
+    specialization: 'Senior Cardiologist & Heart Care Specialist',
     department: 'Cardiology',
-    qualification: 'MD, FACC (Stanford University School of Medicine)',
+    qualification: 'MBBS, MD, DM (Cardiology - AIIMS New Delhi)',
     experience: '16+ years',
-    bio: 'Specialist in non-invasive cardiac imaging, hypertension management, preventive cardiology, and lipid disorders with leading clinical research accolades.',
+    bio: 'Renowned cardiologist specializing in preventative cardiology, hypertension control, non-invasive cardiac imaging (2D Echo/TMT), and post-angioplasty wellness.',
     availableDays: ['Monday', 'Wednesday', 'Friday'],
     timeSlots: [
       '09:00 AM',
@@ -50,19 +50,19 @@ const doctorsData = [
       '03:00 PM',
       '04:00 PM',
     ],
-    consultationFee: 120,
+    consultationFee: 1200,
     rating: 4.95,
-    reviewCount: 98,
-    imageUrl: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80',
+    reviewCount: 192,
+    imageUrl: 'https://images.unsplash.com/photo-1594824813689-53f7f897f1f2?auto=format&fit=crop&w=600&q=80',
     isActive: true,
   },
   {
-    name: 'Dr. Priya Patel',
-    specialization: 'Pediatrician & Adolescent Health',
+    name: 'Dr. Neha Srivastava',
+    specialization: 'Consultant Pediatrician & Child Health Specialist',
     department: 'Pediatrics',
-    qualification: 'MD, FAAP (Columbia University Irving Medical Center)',
+    qualification: 'MBBS, MD (Pediatrics - IMS, BHU Varanasi)',
     experience: '11+ years',
-    bio: 'Dedicated to cheerful, attentive care for infants, children, and teenagers, specializing in developmental milestones, vaccinations, and childhood respiratory wellness.',
+    bio: 'Dedicated to cheerful, attentive care for infants, children, and adolescents, specializing in the National/IAP immunization schedule, developmental milestones, and childhood respiratory care.',
     availableDays: ['Tuesday', 'Wednesday', 'Thursday', 'Saturday'],
     timeSlots: [
       '09:00 AM',
@@ -74,19 +74,19 @@ const doctorsData = [
       '02:30 PM',
       '03:30 PM',
     ],
-    consultationFee: 70,
+    consultationFee: 600,
     rating: 4.9,
     reviewCount: 184,
-    imageUrl: 'https://images.unsplash.com/photo-1594824813689-53f7f897f1f2?auto=format&fit=crop&w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80',
     isActive: true,
   },
   {
-    name: 'Dr. James Rodriguez',
-    specialization: 'Dermatologist & Skin Health Specialist',
+    name: 'Dr. Priya Mishra',
+    specialization: 'Dermatologist & Cosmetologist',
     department: 'Dermatology',
-    qualification: 'MD, FAAD (UCSF School of Medicine)',
+    qualification: 'MBBS, MD (Dermatology - King George’s Medical University)',
     experience: '12+ years',
-    bio: 'Board-certified dermatologist focusing on medical dermatology, acne treatments, eczema, full-body skin cancer screenings, and safe aesthetic therapies.',
+    bio: 'Specialist in clinical dermatology, acne and pigmentation therapies, eczema, hair and scalp wellness, and preventive skin allergy evaluations.',
     availableDays: ['Monday', 'Tuesday', 'Thursday', 'Friday'],
     timeSlots: [
       '09:30 AM',
@@ -97,19 +97,19 @@ const doctorsData = [
       '03:00 PM',
       '04:00 PM',
     ],
-    consultationFee: 85,
+    consultationFee: 800,
     rating: 4.88,
     reviewCount: 116,
-    imageUrl: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80',
     isActive: true,
   },
   {
-    name: 'Dr. Robert Chen',
-    specialization: 'Orthopedic Surgeon & Sports Medicine',
+    name: 'Dr. Rohan Verma',
+    specialization: 'Orthopedic Surgeon & Joint Care Specialist',
     department: 'Orthopedics',
-    qualification: 'MD, FAAOS (University of Pennsylvania Perelman School of Medicine)',
+    qualification: 'MBBS, MS (Orthopedics - SGPGI Lucknow)',
     experience: '15+ years',
-    bio: 'Expert in sports injuries, joint preservation, knee and shoulder conditions, rehabilitation plans, and minimally invasive musculoskeletal treatments.',
+    bio: 'Leading specialist in joint preservation, arthritis care, sports injuries, knee and shoulder pain, spinal ergonomics, and non-surgical mobility restoration.',
     availableDays: ['Monday', 'Wednesday', 'Thursday'],
     timeSlots: [
       '09:00 AM',
@@ -120,19 +120,19 @@ const doctorsData = [
       '03:30 PM',
       '04:30 PM',
     ],
-    consultationFee: 110,
+    consultationFee: 1000,
     rating: 4.92,
-    reviewCount: 89,
+    reviewCount: 189,
     imageUrl: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80',
     isActive: true,
   },
   {
-    name: 'Dr. Emily Thornton',
-    specialization: 'Neurology & Headache Specialist',
+    name: 'Dr. Aditya Singh',
+    specialization: 'Consultant Neurologist & Headache Specialist',
     department: 'Neurology',
-    qualification: 'MD, FAAN (Yale School of Medicine)',
+    qualification: 'MBBS, MD, DM (Neurology - Sanjay Gandhi PGIMS)',
     experience: '13+ years',
-    bio: 'Specializing in migraines and complex headaches, neuropathy, sleep disorders, and cognitive assessments, combining clinical precision with compassionate counseling.',
+    bio: 'Specialist in chronic migraines and headaches, neuropathy, vertigo, seizure disorders, and sleep health assessments with evidence-based clinical counseling.',
     availableDays: ['Tuesday', 'Wednesday', 'Friday'],
     timeSlots: [
       '10:00 AM',
@@ -141,10 +141,10 @@ const doctorsData = [
       '03:00 PM',
       '04:00 PM',
     ],
-    consultationFee: 115,
+    consultationFee: 1500,
     rating: 4.96,
-    reviewCount: 76,
-    imageUrl: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80',
+    reviewCount: 126,
+    imageUrl: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80',
     isActive: true,
   },
 ];
@@ -155,98 +155,113 @@ const seedDatabase = async () => {
     console.log(`[Seed] Connecting to MongoDB: ${connUri}`);
     await mongoose.connect(connUri);
 
-    console.log('[Seed] Clearing existing Doctors collection...');
+    console.log('[Seed] Updating Doctors collection with Indian medical specialists...');
     await Doctor.deleteMany({});
-
-    console.log('[Seed] Inserting realistic fictional doctors...');
     const createdDoctors = await Doctor.insertMany(doctorsData);
-    console.log(`[Seed] Successfully inserted ${createdDoctors.length} doctors.`);
+    console.log(`[Seed] Successfully inserted ${createdDoctors.length} Indian doctors.`);
 
-    // Check if we should seed sample demonstration appointments
-    const existingAppointments = await Appointment.countDocuments();
-    if (existingAppointments === 0) {
-      console.log('[Seed] Seeding realistic sample demo appointments...');
+    console.log('[Seed] Refreshing demo appointments with realistic Indian patient records...');
+    await Appointment.deleteMany({});
 
-      // Get dates: today, tomorrow, day after tomorrow in YYYY-MM-DD format
-      const today = new Date();
-      const formatOffsetDate = (offsetDays) => {
-        const d = new Date(today);
-        d.setDate(d.getDate() + offsetDays);
-        return d.toISOString().split('T')[0];
-      };
+    // Generate dates offset from today (in IST YYYY-MM-DD)
+    const today = new Date();
+    const formatOffsetDate = (offsetDays) => {
+      const d = new Date(today);
+      d.setDate(d.getDate() + offsetDays);
+      return d.toISOString().split('T')[0];
+    };
 
-      const date1 = formatOffsetDate(1);
-      const date2 = formatOffsetDate(2);
-      const date3 = formatOffsetDate(3);
+    const date1 = formatOffsetDate(1);
+    const date2 = formatOffsetDate(2);
+    const date3 = formatOffsetDate(3);
 
-      const sampleAppointments = [
-        {
-          patientName: 'Liam Henderson',
-          phone: '+1 (555) 234-5678',
-          email: 'liam.henderson@example.com',
-          doctorId: createdDoctors[0]._id, // Dr. Sarah Jenkins
-          appointmentDate: date1,
-          appointmentTime: '09:00 AM',
-          reason: 'Annual preventive physical and routine blood work review',
-          status: 'Confirmed',
-        },
-        {
-          patientName: 'Clara Montgomery',
-          phone: '+1 (555) 876-5432',
-          email: 'clara.m@example.com',
-          doctorId: createdDoctors[1]._id, // Dr. Marcus Vance
-          appointmentDate: date1,
-          appointmentTime: '10:00 AM',
-          reason: 'Cardiology follow-up and blood pressure monitoring',
-          status: 'Confirmed',
-        },
-        {
-          patientName: 'Maya Lin',
-          phone: '+1 (555) 345-6789',
-          email: 'maya.lin@example.com',
-          doctorId: createdDoctors[2]._id, // Dr. Priya Patel
-          appointmentDate: date2,
-          appointmentTime: '10:00 AM',
-          reason: 'Childhood wellness checkup and vaccination booster',
-          status: 'Pending',
-        },
-        {
-          patientName: 'David Miller',
-          phone: '+1 (555) 456-7890',
-          email: 'david.m@example.com',
-          doctorId: createdDoctors[3]._id, // Dr. James Rodriguez
-          appointmentDate: date2,
-          appointmentTime: '11:00 AM',
-          reason: 'Persistent skin rash consultation and prescription review',
-          status: 'Confirmed',
-        },
-        {
-          patientName: 'Sophia Ramirez',
-          phone: '+1 (555) 567-8901',
-          email: 'sophia.r@example.com',
-          doctorId: createdDoctors[4]._id, // Dr. Robert Chen
-          appointmentDate: date3,
-          appointmentTime: '02:30 PM',
-          reason: 'Runner knee discomfort assessment and mobility check',
-          status: 'Pending',
-        },
-        {
-          patientName: 'Arthur Pendelton',
-          phone: '+1 (555) 678-9012',
-          email: 'arthur.p@example.com',
-          doctorId: createdDoctors[0]._id, // Dr. Sarah Jenkins
-          appointmentDate: date1,
-          appointmentTime: '02:00 PM',
-          reason: 'Scheduled routine checkup (rescheduled by patient)',
-          status: 'Cancelled',
-        },
-      ];
+    const sampleAppointments = [
+      {
+        patientName: 'Rahul Sharma',
+        phone: '+91 98765 43210',
+        email: 'rahul.sharma@example.com',
+        doctorId: createdDoctors[0]._id, // Dr. Arjun Gupta
+        appointmentDate: date1,
+        appointmentTime: '09:00 AM',
+        reason: 'Annual preventive physical and routine fasting blood sugar review',
+        status: 'Confirmed',
+      },
+      {
+        patientName: 'Priya Verma',
+        phone: '+91 91234 56780',
+        email: 'priya.verma@example.com',
+        doctorId: createdDoctors[1]._id, // Dr. Ananya Sharma
+        appointmentDate: date1,
+        appointmentTime: '10:00 AM',
+        reason: 'Cardiology follow-up and blood pressure monitoring',
+        status: 'Confirmed',
+      },
+      {
+        patientName: 'Ananya Singh',
+        phone: '+91 87654 32109',
+        email: 'ananya.singh@example.com',
+        doctorId: createdDoctors[2]._id, // Dr. Neha Srivastava
+        appointmentDate: date2,
+        appointmentTime: '10:00 AM',
+        reason: 'Childhood vaccination booster and pediatric growth assessment',
+        status: 'Pending',
+      },
+      {
+        patientName: 'Arjun Gupta',
+        phone: '+91 94500 12345',
+        email: 'arjun.gupta@example.com',
+        doctorId: createdDoctors[3]._id, // Dr. Priya Mishra
+        appointmentDate: date2,
+        appointmentTime: '11:00 AM',
+        reason: 'Persistent skin allergy, dust rash, and prescription review',
+        status: 'Confirmed',
+      },
+      {
+        patientName: 'Sneha Mishra',
+        phone: '+91 93350 98765',
+        email: 'sneha.mishra@example.com',
+        doctorId: createdDoctors[4]._id, // Dr. Rohan Verma
+        appointmentDate: date3,
+        appointmentTime: '02:30 PM',
+        reason: 'Knee joint stiffness and discomfort after morning walks',
+        status: 'Pending',
+      },
+      {
+        patientName: 'Rohan Agarwal',
+        phone: '+91 98111 23456',
+        email: 'rohan.agarwal@example.com',
+        doctorId: createdDoctors[5]._id, // Dr. Aditya Singh
+        appointmentDate: date3,
+        appointmentTime: '03:00 PM',
+        reason: 'Chronic migraine management and tension headache review',
+        status: 'Confirmed',
+      },
+      {
+        patientName: 'Neha Srivastava',
+        phone: '+91 99360 87654',
+        email: 'neha.s@example.com',
+        doctorId: createdDoctors[0]._id, // Dr. Arjun Gupta
+        appointmentDate: date1,
+        appointmentTime: '02:00 PM',
+        reason: 'Scheduled routine checkup (rescheduled by patient)',
+        status: 'Cancelled',
+      },
+      {
+        patientName: 'Aman Saxena',
+        phone: '+91 94150 11223',
+        email: 'aman.saxena@example.com',
+        doctorId: createdDoctors[4]._id, // Dr. Rohan Verma
+        appointmentDate: date2,
+        appointmentTime: '01:30 PM',
+        reason: 'Follow-up consultation for shoulder muscle strain and physiotherapy check',
+        status: 'Completed',
+      },
+    ];
 
-      await Appointment.insertMany(sampleAppointments);
-      console.log(`[Seed] Seeded ${sampleAppointments.length} sample demo appointments.`);
-    }
+    await Appointment.insertMany(sampleAppointments);
+    console.log(`[Seed] Seeded ${sampleAppointments.length} realistic Indian demo appointments.`);
 
-    console.log('[Seed] Database seeding completed successfully!');
+    console.log('[Seed] Database seeding completed successfully with Indian healthcare data!');
     process.exit(0);
   } catch (error) {
     console.error('[Seed] Error seeding database:', error);
@@ -255,4 +270,3 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
-

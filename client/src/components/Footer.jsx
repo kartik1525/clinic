@@ -26,11 +26,12 @@ export const Footer = () => {
               <span className="text-xl font-bold tracking-tight text-white">
                 Apex<span className="text-teal-400">Care</span>
               </span>
+              <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-teal-900/60 text-teal-300 border border-teal-700">
+                Multispeciality
+              </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
-              ApexCare Medical Clinic provides accessible, compassionate, and
-              comprehensive healthcare for individuals and families. Certified
-              specialists committed to clinical precision and patient comfort.
+              ApexCare Multispeciality Clinic provides accessible, compassionate, and comprehensive outpatient healthcare for families in Gomti Nagar, Lucknow. Experienced specialists committed to clinical excellence.
             </p>
             <div className="pt-2">
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-xs text-teal-400">
@@ -117,15 +118,15 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm text-slate-400">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-teal-400 shrink-0 mt-1" />
-                <span>742 Evergreen Medical Blvd, Suite 300, Metro City, MC 94016</span>
+                <span>Plot 14, Vibhuti Khand, Gomti Nagar, Lucknow, UP 226010</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>(555) 234-CARE / (555) 234-2273</span>
+                <span>+91 98765 43210 / +91 91234 56780</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>appointments@apexcareclinic.com</span>
+                <span>contact@apexcare.example.com</span>
               </li>
             </ul>
 

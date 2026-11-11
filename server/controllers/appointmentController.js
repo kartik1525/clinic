@@ -152,12 +152,12 @@ export const createAppointment = async (req, res) => {
       });
     }
 
-    // Phone validation (digits, plus, dashes, spaces, length >= 7)
-    const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]{6,15}$/;
+    // Indian mobile phone validation (e.g. +91 98765 43210, 9876543210, with optional +91 country code)
+    const phoneRegex = /^(\+?91[\-\s]?)?[6789]\d{9}$|^[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]{6,15}$/;
     if (!phoneRegex.test(phone.trim())) {
       return res.status(400).json({
         success: false,
-        message: 'Please provide a valid phone number (e.g. +1 555-019-2834 or 555-019-2834)',
+        message: 'Please provide a valid Indian mobile number (e.g. +91 98765 43210 or 9876543210)',
       });
     }
 

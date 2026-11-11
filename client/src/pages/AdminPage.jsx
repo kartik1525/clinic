@@ -6,6 +6,7 @@ import {
   updateAppointmentStatus,
 } from '../services/api';
 import { StatusBadge } from '../components/StatusBadge';
+import { formatINR, formatIndianDate } from '../services/formatters';
 import {
   ShieldAlert,
   Calendar,
@@ -122,10 +123,11 @@ export const AdminPage = () => {
     const headers = [
       'Booking ID',
       'Patient Name',
-      'Phone',
-      'Email',
+      'Mobile Number (+91)',
+      'Email Address',
       'Doctor Name',
       'Department',
+      'Consultation Fee (INR)',
       'Appointment Date',
       'Appointment Time',
       'Status',
@@ -139,8 +141,9 @@ export const AdminPage = () => {
       `"${a.email || ''}"`,
       `"${a.doctorId?.name || 'Unassigned'}"`,
       `"${a.doctorId?.department || ''}"`,
-      `"${a.appointmentDate}"`,
-      `"${a.appointmentTime}"`,
+      `"${a.doctorId?.consultationFee ? `₹${a.doctorId.consultationFee}` : '₹500'}"`,
+      `"${formatIndianDate(a.appointmentDate)}"`,
+      `"${a.appointmentTime} IST"`,
       `"${a.status}"`,
       `"${(a.reason || '').replace(/"/g, '""')}"`,
     ]);
@@ -178,11 +181,11 @@ export const AdminPage = () => {
                   Demonstration Interface Only
                 </h2>
                 <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-200 text-amber-900">
-                  Non-Production MVP
+                  ApexCare Lucknow MVP
                 </span>
               </div>
               <p className="text-xs text-amber-800 mt-0.5">
-                This dashboard is provided for prototype demonstration purposes. In a production deployment, this view would be protected by role-based authentication (RBAC), multi-factor authorization, and clinical audit logging.
+                This dashboard is provided for prototype demonstration for ApexCare Multispeciality Clinic (Gomti Nagar, Lucknow). In a production healthcare system, access is restricted by Ayushman Bharat Digital Mission (ABDM) compliance and role-based staff authorization.
               </p>
             </div>
           </div>
@@ -338,7 +341,7 @@ export const AdminPage = () => {
                 <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
-                  placeholder="Patient name, phone, email..."
+                  placeholder="Patient name, +91 mobile, email..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:bg-white focus:ring-2 focus:ring-teal-500 focus:outline-hidden"
@@ -377,7 +380,7 @@ export const AdminPage = () => {
                 <option value="All">All Doctors</option>
                 {doctors.map((d) => (
                   <option key={d._id} value={d._id}>
-                    {d.name} ({d.department})
+                    {d.name} ({d.department} - {formatINR(d.consultationFee)})
                   </option>
                 ))}
               </select>
@@ -497,7 +500,7 @@ export const AdminPage = () => {
                                 {doc.name || 'Unknown Doctor'}
                               </div>
                               <div className="text-[11px] text-teal-700 font-medium">
-                                {doc.specialization || doc.department || 'General Medicine'}
+                                {doc.specialization || doc.department || 'General Medicine'} • {formatINR(doc.consultationFee || 500)}
                               </div>
                             </div>
                           </div>
@@ -508,16 +511,12 @@ export const AdminPage = () => {
                           <div className="flex items-center gap-1.5 font-bold text-slate-900">
                             <Calendar className="w-3.5 h-3.5 text-teal-600" />
                             <span>
-                              {new Date(appt.appointmentDate).toLocaleDateString('en-US', {
-                                month: 'short',
-                                day: 'numeric',
-                                year: 'numeric',
-                              })}
+                              {formatIndianDate(appt.appointmentDate)}
                             </span>
                           </div>
                           <div className="flex items-center gap-1.5 text-teal-700 font-bold text-xs mt-0.5">
                             <Clock className="w-3.5 h-3.5 text-teal-600" />
-                            <span>{appt.appointmentTime}</span>
+                            <span>{appt.appointmentTime} (IST)</span>
                           </div>
                         </td>
 

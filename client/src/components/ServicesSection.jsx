@@ -39,7 +39,7 @@ const services = [
     icon: Baby,
     description:
       'Gentle, child-centered care from newborn milestones through teenage years in a warm, welcoming environment.',
-    treatments: ['Well-Child Checkups', 'CDC Routine Vaccinations', 'Developmental Assessments', 'Asthma & Allergy Management'],
+    treatments: ['Well-Child Checkups', 'National / IAP Immunization Schedule', 'Developmental Assessments', 'Asthma & Allergy Management'],
     badge: 'Family',
   },
   {
